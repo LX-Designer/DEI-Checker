@@ -24,6 +24,3 @@ def upload_file():
         return jsonify(feedback), 200
     except Exception:
         return jsonify({"error": "An unexpected error occured"}), 500
-
-
-

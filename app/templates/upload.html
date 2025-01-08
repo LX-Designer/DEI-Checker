@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEI Course Content Checker</title>
+</head>
+<body>
+    <h1>DEI Course Content Checker</h1>
+    <form id="upload-form">
+        <label for="file">Upload a .docx or .pdf file:</label><br><br>
+        <input type="file" id="file" name="file" accept=".docx, .pdf" required><br><br>
+        <button type="submit">Upload and Analyze</button>
+    </form>
+    <div id="results" style="margin-top: 20px;"></div>
+
+    <script src="/static/upload.js"></script>
+</body>
+</html>
