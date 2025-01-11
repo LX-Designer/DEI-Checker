@@ -34,10 +34,17 @@ function displayResults(data) {
     const resultsDiv = document.getElementById("results");
     resultsDiv.innerHTML = "<h2>Analysis Results</h2>";
 
+    resultsDiv.innerHTML += `
+        <h3>Document Text with Highlights:</h3>
+        <div style="background-color: #f9f9f9; padding: 10px; border: 1px solid #ddd;">
+            ${data.highlighted_text}
+        </div>
+    `;
+
     if (data.issues.length > 0) {
         resultsDiv.innerHTML += "<h3>Issues:</h3><ul>";
         data.issues.forEach((issue) => {
-            resultsDiv.innerHTML += `<li>${issue}</li>`;
+            resultsDiv.innerHTML += `<li><strong>${issue.term}:</strong> ${issue.feedback}</li>`;
         });
         resultsDiv.innerHTML += "</ul>";
     } else {
