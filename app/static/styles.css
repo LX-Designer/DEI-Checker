@@ -1,0 +1,105 @@
+mark {
+    background-color: yellow;
+    color: black;
+}
+
+/* Apply a modern font to the entire document */
+body {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: white
+    ;
+}
+
+/* Center the form and results div */
+form, #results {
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
+    background: white;
+    border-radius: 8px;
+}
+
+form * {
+    margin: 0;
+    padding: 0;
+}
+
+/* Style the heading */
+h1 {
+    font-size: 2em;
+    margin: 10px 20px;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+p {
+    font-size: 1em;
+    margin: 10px 20px;
+    text-align: center; 
+}
+
+/* Style the file input */
+input[type="file"] {
+    display: none; /* Hide the default file input */
+}
+
+label[for="file"] {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+    display: inline-block;
+}
+
+label[for="file"]:hover {
+    background-color: #0056b3;
+}
+
+/* Style the button with animations */
+button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#submit-button {
+    display: none;
+    transition: background-color 0.3s ease, opacity 0.3s ease;
+    opacity: 1;
+}
+
+#choose-file {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#feedback {
+    display: none;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+#feedback > div {
+    flex: 1; /* Each child div will take up equal space */
+    max-width: 50%; /* Ensure each child div does not exceed half the screen width */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    padding: 10px; /* Optional: Add some padding for better spacing */
+}

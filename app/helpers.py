@@ -28,7 +28,7 @@ def analyze_pdf(file):
 # start here
 def analyze_text(text):                                 # ANALYSES TEXT AND RETURN THE SOURCE TEXT WITH EXCLUSIVE TERMS HIGHLIGHTED, ALONG WITH FEEDBACK ON EACH TERM
     highlighted_text = text                             # stores text in variable 'highlighted_text'
-    exclusive_terms = get_exclusive_terms()               # UPDATE -> fetches the list of exclusive terms from the database to be checked in the analysis
+    exclusive_terms = get_exclusive_terms()               # NEED TO UPDATE -> fetches the list of exclusive terms from the database to be checked in the analysis
     
     feedback = {                                    # initialises a dictionary called 'feedback'
         "highlighted_text": highlighted_text,       # creates a key/value pair for 'highlighted_text', initialised with the original text
@@ -36,7 +36,7 @@ def analyze_text(text):                                 # ANALYSES TEXT AND RETU
         "suggestions": []                           # NOT CURRENTLY BEING USED # creates a key/value pair for 'suggestions', starting as an empty list. 
     }
 
-    for term in exclusive_terms.keys():        # UPDATE -> iterates through each term in 'exclusive_terms'. for each term:
+    for term in exclusive_terms.keys():        # NEED TO UPDATE -> iterates through each term in 'exclusive_terms'. for each term:
         highlighted_text = re.sub(      # updates 'highlighted_text' with the result of re.sub(), replacing each term with a highlighted version
             rf"\b({term})\b",           # denotes word boundaries using \b to match the exact term and not capture parts of longer words
             r"<mark>\1</mark>",         # replaces the term with itself (\1) and wraps the term in <mark> tags for highlighting
