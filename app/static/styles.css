@@ -80,26 +80,96 @@ button:hover {
     background-color: #0056b3;
 }
 
+/* Add transition to the submit button */
 #submit-button {
     display: none;
-    transition: background-color 0.3s ease, opacity 0.3s ease;
+    transition: background-color 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+    opacity: 0;
+}
+
+#submit-button.reviewed {
+    display: inline-block;
+    background-color: green;
     opacity: 1;
 }
 
+/* Add transition to the choose file label */
 #choose-file {
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease, opacity 0.3s ease;
+    display: inline-block; /* Ensure the label is displayed */
 }
 
-#feedback {
+#choose-file.uploaded {
+    background-color: green;
+    pointer-events: none;
+}
+
+#choose-new-file {
     display: none;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: center;
+    cursor: pointer;
+    color: blue;
+    transition: opacity 0.3s ease;
+    margin-left: 10px; /* Adjust margin as needed */
+    font-size: 0.9em; /* Adjust font size as needed */
 }
 
-#feedback > div {
-    flex: 1; /* Each child div will take up equal space */
-    max-width: 50%; /* Ensure each child div does not exceed half the screen width */
-    box-sizing: border-box; /* Include padding and border in the element's total width and height */
-    padding: 10px; /* Optional: Add some padding for better spacing */
+#choose-new-file.visible {
+    display: inline-block;
+}
+
+#doc {
+    border: 1px solid #ccc; /* Light gray border */
+    padding: 10px; /* Padding inside the box */
+    margin: 20px 40px; /* Space above the box */
+    background-color: #f9f9f9; /* Light background color */
+    border-radius: 5px; /* Rounded corners */
+    font-family: 'Roboto', sans-serif; /* Use the same font as the rest of the page */
+    white-space: pre-wrap; /* Preserve whitespace and line breaks */
+    overflow: auto; /* Add scrollbars if the content overflows */
+}
+
+/* Add styles for the no-bullets class */
+.no-bullets {
+    list-style-type: none; /* Remove bullet points */
+    padding-left: 0; /* Remove default padding */
+}
+
+.no-bullets li {
+    margin-bottom: 10px; /* Add space after each list element */
+}
+
+/* Style the file input label and other buttons with the same class */
+.styled-button {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px auto; /* Center the button */
+}
+
+.styled-button:hover {
+    background-color: #0056b3;
+}
+
+/* Center the text */
+.center-text {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 40px; /* Adjust margin as needed */
+}
+
+.center-text a {
+    text-decoration: none; /* Remove underline */
+    color: blue; /* Optional: Set link color */
+}
+
+.center-text a:hover {
+    text-decoration: none; /* Ensure underline is removed on hover */
 }

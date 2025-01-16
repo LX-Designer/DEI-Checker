@@ -1,0 +1,21 @@
+{% extends "upload.html" %}
+
+{% block title %}Results{% endblock %}
+
+{% block content %}
+<h2>Source Text</h2>
+<p style="margin-bottom: 20px;">Here is your text. The terms identified in your results are highlighted in yellow.</p>
+<div style="text-align: center;">
+    <button id="back-to-results" class="styled-button" onclick="setBackFlagAndNavigate()">Back to Results</button>
+</div>
+<div id="doc">{{ highlighted_text|safe }}</div>
+
+<script>
+function setBackFlagAndNavigate() {
+    sessionStorage.setItem('navigatedBack', 'true');
+    sessionStorage.setItem('buttonState', 'reviewed'); // Set buttonState to 'reviewed'
+    sessionStorage.setItem('fileState', 'uploaded'); // Set fileState to 'uploaded'
+    window.location.href = '/';
+}
+</script>
+{% endblock %}

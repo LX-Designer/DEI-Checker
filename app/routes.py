@@ -1,4 +1,4 @@
-from flask import request, jsonify
+from flask import request, jsonify, render_template, session
 from app import app
 from app.helpers import process_file
 
@@ -21,6 +21,12 @@ def upload_file():
 
     try:
         feedback = process_file(file)
+        session['highlighted_text'] = feedback['highlighted_text']  # Store highlighted_text in session
         return jsonify(feedback), 200
     except Exception:
         return jsonify({"error": "An unexpected error occured"}), 500
+
+@app.route('/results')
+def results():
+    highlighted_text = session.get('highlighted_text', '')  # Retrieve highlighted_text from session
+    return render_template('results.html', highlighted_text=highlighted_text)
